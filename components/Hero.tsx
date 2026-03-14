@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { profile } from "@/data/profile";
 import { SECTION_IDS } from "@/lib/sections";
 import { useState } from "react";
@@ -35,10 +36,12 @@ export function Hero() {
               layout
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
-            <img
+            <Image
               src="/profile.png"
               alt={profile.name}
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
+              priority
             />
           </motion.div>
         </motion.div>
