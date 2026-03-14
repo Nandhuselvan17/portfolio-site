@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ResumeModalProps {
@@ -6,6 +7,12 @@ interface ResumeModalProps {
 }
 
 export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
+  }, []);
+
   return (
     <AnimatePresence>
       {open && (
@@ -34,10 +41,10 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
               Resume
             </h2>
             <div className="h-[calc(100%-3rem)] overflow-hidden rounded-lg border border-gray-800 bg-black/50">
-              {typeof window !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent) ? (
+              {isMobile ? (
                 <div className="flex h-full flex-col items-center justify-center p-4 text-center">
                   <p className="mb-4 text-sm text-gray-300">
-                    Tap below to view or download the resume
+                    Tap below to view the resume
                   </p>
                   <a
                     href="/resume.pdf"
