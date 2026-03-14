@@ -41,6 +41,8 @@ export function Hero() {
               className="h-full w-full object-cover"
               width={260}
               height={420}
+              loading="eager"
+              onError={(e) => console.log('Image error:', e)}
             />
           </motion.div>
         </motion.div>
