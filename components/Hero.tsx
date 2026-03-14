@@ -36,13 +36,11 @@ export function Hero() {
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
             <img
-              src="https://raw.githubusercontent.com/Nandhuselvan17/portfolio-site/main/public/profile.png"
+              src="/profile.png"
               alt={profile.name}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
               width={260}
               height={420}
-              loading="eager"
-              onError={(e) => console.log('Image error:', e)}
             />
           </motion.div>
         </motion.div>
