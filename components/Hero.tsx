@@ -36,7 +36,7 @@ export function Hero() {
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
             <img
-              src="/profile.png?ver=3"
+              src="https://raw.githubusercontent.com/Nandhuselvan17/portfolio-site/main/public/profile.png"
               alt={profile.name}
               className="h-full w-full object-cover"
               width={260}
