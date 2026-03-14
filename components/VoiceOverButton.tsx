@@ -129,7 +129,7 @@ export function VoiceOverButton() {
 
   return (
     <motion.button
-      className={`fixed bottom-5 right-4 z-30 rounded-full border px-4 py-2 text-xs font-semibold shadow-glow-primary md:right-6 ${
+      className={`fixed bottom-5 right-4 z-30 rounded-full border px-4 py-2 text-xs font-semibold shadow-glow-primary md:right-6 pb-safe ${
         isSpeaking || isListening
           ? "border-red-500 bg-red-500/90 text-white"
           : "border-primary bg-primary/90 text-black"

@@ -81,7 +81,7 @@ export function AIChatWidget() {
   return (
     <>
       <motion.button
-        className="fixed bottom-20 right-4 z-30 rounded-full border border-primary bg-primary/90 px-4 py-2 text-xs font-semibold text-black shadow-glow-primary md:right-6"
+        className="fixed bottom-20 right-4 z-30 rounded-full border border-primary bg-primary/90 px-4 py-2 text-xs font-semibold text-black shadow-glow-primary md:right-6 pb-safe"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setOpen((v) => !v)}
