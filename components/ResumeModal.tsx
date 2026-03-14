@@ -34,24 +34,27 @@ export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
               Resume
             </h2>
             <div className="h-[calc(100%-3rem)] overflow-hidden rounded-lg border border-gray-800 bg-black/50">
-              <object
-                data="/resume.pdf"
-                type="application/pdf"
-                className="h-full w-full"
-              >
-                <p className="p-4 text-xs text-gray-300">
-                  Unable to display the PDF.{" "}
+              {typeof window !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent) ? (
+                <div className="flex h-full flex-col items-center justify-center p-4 text-center">
+                  <p className="mb-4 text-sm text-gray-300">
+                    Tap below to view or download the resume
+                  </p>
                   <a
                     href="/resume.pdf"
-                    className="text-primary underline-offset-4 hover:underline"
+                    className="rounded-full border border-primary bg-primary/90 px-6 py-2 text-sm font-semibold text-black"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Download the resume
+                    View Resume
                   </a>
-                  .
-                </p>
-              </object>
+                </div>
+              ) : (
+                <iframe
+                  src="/resume.pdf"
+                  className="h-full w-full"
+                  title="Resume PDF"
+                />
+              )}
             </div>
           </motion.div>
         </motion.div>
